@@ -2,8 +2,15 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {
+    "messages:prepare": {
+      "dependsOn": ["^messages:prepare"],
+      "outputs": ["messages/**"]
+    },
+    "test": {
+      "dependsOn": ["messages:prepare", "^test"]
+    },
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["messages:prepare", "^build"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "lint": {
@@ -12,6 +19,10 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "messages:publish": {
+      "dependsOn": ["messages:prepare", "messages:commit"],
+      "outputs": ["messages/**"]
     }
   }
 }

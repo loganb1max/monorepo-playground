@@ -1,0 +1,21 @@
+{
+  "name": "example-mfe",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "webpack --mode production",
+    "test": "jest --ci",
+    "lint": "eslint . --max-warnings 0",
+    "messages:compile": "formatjs compile-folder --ast \"messages/extracted\" \"messages/compiled\"",
+    "messages:extract": "formatjs extract \"src/**/*.{ts,tsx,js,jsx}\" --ignore \"src/**/*.d.ts\" --out-file \"messages/extracted/en-US.json\"",
+    "messages:prepare": "npm run messages:extract && npm run messages:compile"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@repo/webpack-config": "*"
+  },
+  "dependencies": {
+    "intl-loader": "*"
+  }
+}

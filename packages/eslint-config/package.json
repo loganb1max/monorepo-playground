@@ -8,12 +8,13 @@
     "react-internal.js"
   ],
   "devDependencies": {
-    "@vercel/style-guide": "latest",
-    "eslint-config-turbo": "latest",
-    "eslint-config-prettier": "latest",
-    "eslint-plugin-only-warn": "latest",
-    "@typescript-eslint/parser": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "@vercel/style-guide": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-config-turbo": "latest",
+    "eslint-plugin-formatjs": "^4.12.2",
+    "eslint-plugin-only-warn": "latest",
     "typescript": "latest"
   }
 }

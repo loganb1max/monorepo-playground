@@ -1,0 +1,21 @@
+{
+  "name": "intl-loader",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Add dev script here'",
+    "build": "echo 'Add build script here'",
+    "test": "echo 'Add test script here'",
+    "lint": "echo 'Add lint script here'"
+  },
+  "devDependencies": {
+    "@formatjs/cli": "^6.2.7",
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "@repo/webpack-config": "*"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-intl": "^6.6.2"
+  }
+}
