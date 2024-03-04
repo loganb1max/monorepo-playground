@@ -9,8 +9,7 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "messages:commit": "git add **/messages/**/*.json && git commit -m \"chore: update messages\" --allow-empty",
-    "messages:publish": "turbo run messages:publish --cache-dir=.turbo && git push"
+    "messages:prepare": "turbo run messages:prepare"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
