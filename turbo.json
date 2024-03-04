@@ -20,9 +20,7 @@
       "cache": false,
       "persistent": true
     },
-    "//#messages:commit": {
-      "dependsOn": ["messages:commit"]
-    },
+    "//#messages:commit": {},
     "//#messages:publish": {
       "dependsOn": ["^messages:prepare", "messages:commit"]
     }
