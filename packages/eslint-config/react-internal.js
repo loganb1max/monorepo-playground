@@ -36,6 +36,7 @@ module.exports = {
   ignorePatterns: [
     // Ignore dotfiles
     ".*.js",
+    "webpack.config.js",
     "node_modules/",
     "dist/",
   ],
