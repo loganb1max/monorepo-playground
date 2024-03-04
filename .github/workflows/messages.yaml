@@ -4,6 +4,10 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   compile:
     runs-on: ubuntu-latest
@@ -29,6 +33,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Setup Git Config
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "gha@users.noreply.github.com"
 
       - name: Commit and Push Messages
         run: npm run messages:publish
