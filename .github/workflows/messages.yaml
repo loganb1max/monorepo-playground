@@ -42,7 +42,7 @@ jobs:
       - name: Commit and Push Messages
         run: |
           git config --global user.name "GitHub Actions"
-          git config --global user.email "gha@users.noreply.github.com"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "chore: update messages [skip ci]"
           git push
@@ -62,19 +62,17 @@ jobs:
               repo: context.repo.repo,
               issue_number: context.payload.pull_request.number
             });
-            const comment = comments.find(comment => comment.user.login === 'github-actions[bot]' && comment.body.includes('Messages published'));
+            const comment = comments.find(comment => comment.user.login === 'github-actions[bot]' && comment.body.includes('Messages Published'));
             if (comment) {
-              await github.issues.updateComment({
+              await github.issues.deleteComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                comment_id: comment.id,
-                body: `Messages published at ${new Date().toISOString()}`
-              });
-            } else {
-              await github.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.payload.pull_request.number,
-                body: `Messages published at ${new Date().toISOString()}`
+                comment_id: comment.id
               });
             }
+            await github.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: `Messages Published 🚀`
+            });
