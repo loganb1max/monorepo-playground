@@ -20,7 +20,7 @@
       "cache": false,
       "persistent": true
     },
-    "messages:publish": {
+    "//#messages:publish": {
       "dependsOn": ["messages:prepare", "messages:commit"],
       "outputs": ["messages/**"]
     }
