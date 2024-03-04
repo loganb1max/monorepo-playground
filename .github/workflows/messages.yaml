@@ -15,7 +15,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: origin/${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
 
       - name: Cache turbo build setup
