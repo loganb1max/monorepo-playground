@@ -44,7 +44,8 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "gha@users.noreply.github.com"
           git add .
-          git commit -m "chore: update messages"
+          git commit -m "chore: update messages [skip ci]"
+          git push
 
       - name: Update PR Comment with notfication
         uses: actions/github-script@v4
