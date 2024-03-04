@@ -19,10 +19,6 @@
     "dev": {
       "cache": false,
       "persistent": true
-    },
-    "messages:publish": {
-      "dependsOn": ["messages:prepare", "messages:commit"],
-      "outputs": ["messages/**"]
     }
   }
 }
